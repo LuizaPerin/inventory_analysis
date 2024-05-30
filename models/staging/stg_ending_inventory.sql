@@ -15,7 +15,7 @@ source_data AS (
         , CAST((price*100) AS INT64) AS price
         ,enddate AS end_date
     FROM
-        {{ ref('EndInvFINAL12312016') }}
+        {{ source('raw-data', 'EndInvFINAL12312016') }}
 )
 
 SELECT

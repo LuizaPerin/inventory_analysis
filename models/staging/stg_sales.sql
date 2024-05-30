@@ -20,7 +20,7 @@ source_data AS (
         , vendorno AS vendor_number
         , vendorname AS vendor_name
     FROM
-        {{ ref('SalesFINAL12312016') }}
+        {{ source('raw-data', 'SalesFINAL12312016') }}
 )
 
 SELECT

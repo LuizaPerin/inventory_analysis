@@ -22,7 +22,7 @@ source_data AS (
         , CAST((dollars*100) AS INT64) dollars
         , classification
     FROM
-        `inventory-analysis-424712.inventory.PurchasesFINAL`
+        {{ source('raw-data', 'PurchasesFINAL') }}
 )
 
 SELECT

@@ -16,7 +16,7 @@ source_data AS (
         , CAST((freight*100) AS INT64) AS freight
         , approval
     FROM
-        {{ ref('InvoicePurchases12312016') }}
+        {{ source('raw-data', 'InvoicePurchases12312016') }}
 )
 
 SELECT

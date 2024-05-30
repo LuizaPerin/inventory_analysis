@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw-data
+    schema: inventory
+    database: inventory-analysis-424712
+    tables:
+      - name: 2017PurchasePricesDec
+      - name: InvoicePurchases12312016
+      - name: SalesFINAL12312016
+      - name: BegInvFINAL12312016
+      - name: EndInvFINAL12312016
+      - name: PurchasesFINAL
