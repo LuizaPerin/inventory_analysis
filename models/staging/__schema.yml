@@ -1,0 +1,118 @@
+models:
+  - name: stg_purchase_prices
+    description: "Table of products with price, description and seller information"
+    columns:
+      - name: id
+        data_tests:
+          - unique
+          - not_null
+      - name: description
+      - name: classification
+        data_tests:
+          - accepted_values:
+              values: [1, 2]
+      - name: sell_price
+      - name: purchase_price
+      - name: profit_per_unit
+        data_tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: false
+              config:
+                severity: error
+                error_if: ">10"
+                warn_if: ">0"
+      - name: size
+      - name: volume
+      - name: vendor_number
+      - name: vendor_name
+
+  - name: stg_begining_inventory
+    description: "Table of inventory with store, description, price and start date"
+    columns:
+      - name: inventory_id
+        data_tests:
+          - unique
+          - not_null
+      - name: store
+      - name: city
+      - name: brand
+      - name: description
+      - name: size
+      - name: on_hand
+      - name: price
+      - name: start_date
+
+  - name: stg_ending_inventory
+    description: "Table of inventory with store, description, price and end date"
+    columns:
+      - name: inventory_id
+        data_tests:
+          - unique
+          - not_null
+      - name: store
+      - name: city
+      - name: brand
+      - name: description
+      - name: size
+      - name: on_hand
+      - name: price
+      - name: end_date
+
+  - name: stg_invoice_purchases
+    description: "Table of invoices from purchases with vendor number, incoice date, po number, quantity, price and freight"
+    columns:
+      - name: vendor_number
+      - name: vendor_name
+      - name: invoice_date
+      - name: PO_number
+      - name: PO_date
+      - name: pay_date
+      - name: quantity
+      - name: dollars
+      - name: freight
+      - name: approval
+
+  - name: stg_purchases
+    description: "Table of all purchase with all data regarding purchase"
+    columns:
+      - name: inventory_id
+      - name: store
+      - name: brand
+      - name: description
+      - name: size
+      - name: vendor_number
+      - name: vendor_name
+      - name: PO_number
+      - name: PO_date
+      - name: receving_date
+      - name: invoice_date
+      - name: pay_date
+      - name: purchase_price
+      - name: quantity
+      - name: dollars
+      - name: classification
+        data_tests:
+          - accepted_values:
+              values: [1, 2]
+
+  - name: stg_sales
+    description: "Table of all sales with all data regarding sales"
+    columns:
+      - name: inventory_id
+      - name: store
+      - name: brand
+      - name: description
+      - name: size
+      - name: sales_quantity
+      - name: sales_dollars
+      - name: sales_price
+      - name: sales_date
+      - name: volume
+      - name: classification
+        data_tests:
+          - accepted_values:
+              values: [1, 2]
+      - name: excise_tax
+      - name: vendor_number
+      - name: vendor_name
