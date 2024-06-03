@@ -5,7 +5,7 @@ WITH
 
 source_data AS (
     SELECT
-        InventoryId AS invetory_id
+        InventoryId AS inventory_id
         , store
         , brand
         , description
