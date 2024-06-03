@@ -1,8 +1,10 @@
+version: 2
+
 models:
   - name: stg_purchase_prices
     description: "Table of products with price, description and seller information"
     columns:
-      - name: id
+      - name: brand_id
         data_tests:
           - unique
           - not_null
@@ -11,6 +13,7 @@ models:
         data_tests:
           - accepted_values:
               values: [1, 2]
+              quote: false
       - name: sell_price
       - name: purchase_price
       - name: profit_per_unit
@@ -77,6 +80,8 @@ models:
     description: "Table of all purchase with all data regarding purchase"
     columns:
       - name: inventory_id
+        data_tests:
+          - not_null
       - name: store
       - name: brand
       - name: description
@@ -95,11 +100,14 @@ models:
         data_tests:
           - accepted_values:
               values: [1, 2]
+              quote: false
 
   - name: stg_sales
     description: "Table of all sales with all data regarding sales"
     columns:
       - name: inventory_id
+        data_tests:
+          - not_null
       - name: store
       - name: brand
       - name: description
@@ -113,6 +121,7 @@ models:
         data_tests:
           - accepted_values:
               values: [1, 2]
+              quote: false
       - name: excise_tax
       - name: vendor_number
       - name: vendor_name
