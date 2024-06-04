@@ -10,7 +10,6 @@ source_data AS (
         , classification
         , CAST((price*100) AS INT64) AS sell_price
         , CAST((purchaseprice*100) AS INT64) AS purchase_price
-        , ((CAST((price*100) AS INT64)) - (CAST((purchaseprice*100) AS INT64))) AS profit_per_unit
         , size
         , volume
         , vendornumber AS vendor_number
