@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: int_lead_time
+    description: "Table calculating the time between process. PO -> Receving -> Invoice -> Payment"
+    columns:
+      - name: lead_time
+        description: "Calculates the time between PO and Receving"
+      - name: invoice_process_time
+        description: "Calculates the time between Receving and Invoice"
+      - name: payment_time
+        description: "Calculates the time between Invoice and Payment"
+      - name: total_process_time
+        description: "Calculates the time between PO and Payment"
