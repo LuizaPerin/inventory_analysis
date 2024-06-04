@@ -2,8 +2,10 @@ version: 2
 
 models:
   - name: fct_lead_time
-    description: "Calculate lead time summary statistics"
+    description: "Group by brand and description and calculate lead time summary statistics"
     columns:
+      - name: brand
+      - name: description
       - name: max_lead_time
       - name: min_lead_time
       - name: avg_lead_time
