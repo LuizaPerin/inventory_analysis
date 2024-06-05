@@ -14,3 +14,15 @@ models:
         description: "Calculates the time between Invoice and Payment"
       - name: total_process_time
         description: "Calculates the time between PO and Payment"
+
+  - name: int_abc_analysis
+    description: "Merge relevant data from sales and purchases tables for future ABC analysis"
+    columns:
+      - name: inventory_id
+      - name: store
+      - name: brand
+      - name: description
+      - name: size
+      - name: sales_quantity
+      - name: sales_price
+      - name: purchase_price
