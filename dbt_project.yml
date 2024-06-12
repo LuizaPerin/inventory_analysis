@@ -40,3 +40,6 @@ models:
     fact:
       +schema: fact
       +materialized: table
+    dimension:
+      +schema: dimension
+      +materialized: table
