@@ -2,8 +2,7 @@ WITH
 
 source_data AS (
     SELECT
-        brand,
-        description
+        brand
         , MAX(lead_time) AS max_lead_time
         , MIN(lead_time) AS min_lead_time
         , AVG(lead_time) AS avg_lead_time

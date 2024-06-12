@@ -5,7 +5,6 @@ models:
     description: "Group by brand and description and calculate lead time summary statistics"
     columns:
       - name: brand
-      - name: description
       - name: max_lead_time
       - name: min_lead_time
       - name: avg_lead_time

@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_brand_description
+    description: "Table with the discription for each brand"
+    columns:
+      - name: brand
+        data_tests:
+          - unique
+          - not_null
+      - name: description
+        data_tests:
+          - not_null
